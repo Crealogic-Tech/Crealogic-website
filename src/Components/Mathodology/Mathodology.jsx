@@ -1,45 +1,58 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import MethodologyCard from "./MethodologyCard";
 
-import AboutImage from "../../assets/images/person-1.png";
+import DesignImage from "../../assets/images/design.svg";
+import DiscoverImage from "../../assets/images/discover.svg";
+import FeedbackImage from "../../assets/images/feedback.svg";
+import PlanningImage from "../../assets/images/planning.svg";
+import SupportImage from "../../assets/images/support.svg";
+import TestingImage from "../../assets/images/testing.svg";
+import MethodImage from "../../assets/images/method.svg";
 import SectionName from "../SectionName";
 
 const Methodologies = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true }); // Initialize AOS
+  }, []);
+
   const methodologiesData = [
     {
       id: 1,
-      title: "In-depth Consultation",
-      description:
-        "We start by understanding your specific needs and goals through detailed discussions and analysis.",
-      icon:AboutImage, // Replace with actual icon
+      title:"Discovery & Research: ",
+      description: "Understanding your business goals and target audience.",
+      icon:DiscoverImage,
     },
     {
       id: 2,
-      title: "Project Planning & Strategy",
-      description:
-        "We develop a comprehensive project plan with clear timelines, milestones, and deliverables.",
-      icon:AboutImage, // Replace with actual icon
+      title:"Strategy & Planning: ",
+      description: "Creating a roadmap for success with clear objectives.",
+      icon:PlanningImage,
     },
     {
       id: 3,
-      title: "Agile Development",
-      description:
-        "We use an agile development methodology to ensure flexibility and continuous improvement throughout the project.",
-      icon:AboutImage, // Replace with actual icon
+      title:"Design & Development:",
+      description: "Crafting visually stunning and functional solutions.",
+      icon:DesignImage,
     },
     {
       id: 4,
-      title: "Quality Assurance",
-      description:
-        "We implement rigorous quality assurance measures to ensure the highest standards of work.",
-      icon:AboutImage, // Replace with actual icon
+      title:"Testing & Launch: ",
+      description: "Ensuring all aspects are tested rigorously before going live.",
+      icon:TestingImage,
     },
     {
       id: 5,
-      title: "Ongoing Support",
-      description:
-        "We provide ongoing support and maintenance to ensure your continued success.",
-      icon:AboutImage, // Replace with actual icon
+      title:"Ongoing Support: ",
+      description: "Providing continuous maintenance and support post-launch.",
+      icon:SupportImage,
+    },
+    {
+      id: 6,
+      title:"Collaboration & Feedback:",
+      description: "Open communication ensures your vision is integrated.",
+      icon:FeedbackImage,
     },
   ];
 
@@ -47,39 +60,38 @@ const Methodologies = () => {
     <section className="pb-[100px]">
       <div className="container">
         <SectionName title="Methodologies" />
-        <div className="flex justify-center items-center mt-14">
-          <h2 className="text-center max-w-[800px] mb-3">
-            Our Approach to Success
-          </h2>
-        </div>
-        <div className="text-white py-16">
-          <div className="flex flex-col lg:flex-row justify-center gap-10 items-center lg:items-start">
+        
+        <div className="text-white mt-14 pb-16">
+          <div className="flex flex-col lg:flex-row justify-center gap-10 items-center">
             <div className="order-2 lg:order-1 flex flex-col w-full items-start justify-center gap-5 space-y-5">
-              {methodologiesData.slice(0, 2).map((methodology) => (
+              {methodologiesData.slice(0, 3).map((methodology, index) => (
                 <MethodologyCard
                   key={methodology.id}
                   title={methodology.title}
                   description={methodology.description}
                   icon={methodology.icon}
+                  aosDelay={index * 200} // Delay for each card
                 />
               ))}
             </div>
 
-            <div className="order-1 lg:order-2 flex justify-center items-center">
+            <div className="relative order-1 lg:order-2 flex justify-center items-center">
+              {/* <div className="absolute top-[0] right-6 w-[400px] h-[400px] rounded-full blur-[20px] opacity-10 bg-gradient-45"></div> */}
               <img
-                src={AboutImage} // Replace with actual image
+                src={MethodImage}
                 alt="Center Graphic"
                 className="max-w-sm text-center flex items-center"
               />
             </div>
 
             <div className="order-3 lg:order-3 w-full flex flex-col items-center justify-center gap-5 space-y-5">
-              {methodologiesData.slice(2).map((methodology) => (
+              {methodologiesData.slice(3).map((methodology, index) => (
                 <MethodologyCard
                   key={methodology.id}
                   title={methodology.title}
                   description={methodology.description}
                   icon={methodology.icon}
+                  aosDelay={index * 200 + 600} // Adjust delay for second set
                 />
               ))}
             </div>

@@ -1,10 +1,8 @@
-// ProfitSection.js
 import React from "react";
 import TextContent from "./TextContent";
 import ImageContent from "./ImageContent";
 
 const ProfitSection = ({
-  reverse,
   title,
   highlightedText,
   description,
@@ -12,44 +10,31 @@ const ProfitSection = ({
   imageAlt,
 }) => {
   return (
-    <section className="relative ">
+    <section className="relative">
       <div className="container">
-        <div className="flex justify-center lg:justify-between gap-14 items-center">
-          {reverse ? (
-            <div className="flex gap-10 flex-col lg:flex-row justify-center lg:justify-between items-center ">
-              <div className="">
-                <ImageContent
-                  src={imageSrc}
-                  alt={imageAlt}
-                  justify="justify-start"
-                />
-              </div>
-              <div className="max-w-[736px] ">
-                <TextContent
-                  title={title}
-                  highlightedText={highlightedText}
-                  description={description}
-                />
-              </div>
-            </div>
-          ) : (
-            <div className="flex gap-10 flex-col lg:flex-row justify-center lg:justify-between items-center ">
-              <div className="max-w-[736px] ">
-                <TextContent
-                  title={title}
-                  highlightedText={highlightedText}
-                  description={description}
-                />
-              </div>
-              <div className="w-full h-full">
-                <ImageContent
-                  src={imageSrc}
-                  alt={imageAlt}
-                  justify="justify-start"
-                />
-              </div>
-            </div>
-          )}
+        <div className="flex flex-col lg:flex-row justify-center lg:justify-between gap-14 items-center">
+          <div
+            className="max-w-[736px] order-2 lg:order-1"
+            data-aos="fade-up"
+            data-aos-delay="200" // Adjust the delay
+          >
+            <TextContent
+              title={title}
+              highlightedText={highlightedText}
+              description={description}
+            />
+          </div>
+          <div
+            className="w-full h-full order-1 lg:order-2"
+            data-aos="fade-up"
+            data-aos-delay="400" // Adjust the delay
+          >
+            <ImageContent
+              src={imageSrc}
+              alt={imageAlt}
+              justify="justify-start"
+            />
+          </div>
         </div>
       </div>
     </section>

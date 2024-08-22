@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 import AboutImage from "../../assets/images/aboutus.svg";
 import ProfitSection from "./ProfitSection";
 import SectionName from "../SectionName";
 
 export const AboutSection = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true }); // Initialize AOS
+  }, []);
+
   return (
-    <section>
+    <section id="about">
       <div className="container">
         <SectionName title="About" />
         <div className="mt-14">

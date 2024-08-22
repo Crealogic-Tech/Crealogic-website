@@ -1,14 +1,17 @@
 import React from "react";
-import TimelineItem from "./TimelineItem";
 
-const Timeline = ({ items }) => {
+const Timeline = ({ icon, title, description, aosType, aosDelay }) => {
   return (
-    <div className="mt-20 flex justify-center items-center flex-col">
-      <div className="vertical-timeline vertical-timeline--animate vertical-timeline--two-columns">
-        {items.map((item, index) => (
-          <TimelineItem key={index} {...item} isLeft={index % 2 === 0} />
-        ))}
+    <div
+      className="heroHeadding p-6 rounded-lg text-center text-white"
+      data-aos={aosType}
+      data-aos-delay={aosDelay}
+    >
+      <div className="flex justify-center mb-4">
+        <img src={icon} alt={title} className="w-24 h-24 aboutImage" />
       </div>
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <p className="text-gray-400">{description}</p>
     </div>
   );
 };

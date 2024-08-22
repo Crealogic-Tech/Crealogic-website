@@ -27,9 +27,6 @@ const Header = () => {
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
   }, [isMenuOpen]);
 
   const toggleMenu = () => {
@@ -49,7 +46,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`transition-all overflow- duration-300 ease-in-out ${
+        className={`transition-all duration-300 ease-in-out ${
           isScrolled
             ? "fixed top-0 left-0 w-full py-4 z-40 bg-transparent transition-transform duration-1000 ease-in-out backdrop-blur-lg transform translate-y-0 shadow-xl"
             : "absolute top-0 left-0 w-full py-4 z-30"
@@ -83,10 +80,10 @@ const Header = () => {
           <div className="hidden lg:flex">
             <div className="flex items-center justify-center border-l lg:border-l-0">
               <div className="flex flex-col h-full justify-between lg:items-center lg:flex-row">
-                <ul className=" pt-20 text-accentLight space-y-8  lg:space-y-0 lg:flex lg:space-x-12 lg:pt-0">
+                <ul className="pt-20 text-accentLight space-y-8 lg:space-y-0 lg:flex lg:space-x-12 lg:pt-0">
                   <li>
                     <a
-                      href=""
+                      href="#home"
                       className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
                     >
                       <span className="relative group-hover:text-primaryLight lg:text-primaryMedium font-medium">
@@ -96,17 +93,17 @@ const Header = () => {
                   </li>
                   <li>
                     <a
-                      href=""
+                      href="#about"
                       className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
                     >
                       <span className="relative group-hover:text-primaryLight lg:text-primaryMedium font-medium">
-                        About us
+                        About Us
                       </span>
                     </a>
                   </li>
                   <li>
                     <a
-                      href=""
+                      href="#services"
                       className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
                     >
                       <span className="relative group-hover:text-primaryLight lg:text-primaryMedium font-medium">
@@ -114,10 +111,9 @@ const Header = () => {
                       </span>
                     </a>
                   </li>
-
                   <li>
                     <a
-                      href=""
+                      href="#contact"
                       className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
                     >
                       <span className="relative group-hover:text-primaryLight lg:text-primaryMedium font-medium whitespace-nowrap">
@@ -146,7 +142,7 @@ const Header = () => {
           <ul className="flex flex-col items-center space-y-8">
             <li>
               <a
-                href="/"
+                href="#home"
                 className="text-secondry text-2xl font-medium hover:text-primaryLight"
               >
                 Home
@@ -154,23 +150,7 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="/services"
-                className="text-secondry text-2xl font-medium hover:text-primaryLight"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="/portfolio"
-                className="text-secondry text-2xl font-medium hover:text-primaryLight"
-              >
-                Portfolio
-              </a>
-            </li>
-            <li>
-              <a
-                href="/about"
+                href="#about"
                 className="text-secondry text-2xl font-medium hover:text-primaryLight"
               >
                 About Us
@@ -178,15 +158,15 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="/career"
+                href="#services"
                 className="text-secondry text-2xl font-medium hover:text-primaryLight"
               >
-                Career
+                Services
               </a>
             </li>
             <li>
               <a
-                href="/contact"
+                href="#contact"
                 className="text-secondry text-2xl font-medium hover:text-primaryLight"
               >
                 Contact Us

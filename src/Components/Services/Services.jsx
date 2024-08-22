@@ -1,77 +1,106 @@
 import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";  
 import SecurityCard from "../Card";
-import ShopifyIcon1 from "../../assets/images/shopify1.svg";
-import WebIcon1 from "../../assets/images/wb1.svg";
-import MarketingIcon1 from "../../assets/images/marketing1.svg";
-import AdsIcon1 from "../../assets/images/ads1.svg";
-import GraphicsIcon1 from "../../assets/images/graphics1.svg";
-import MarketingServicesIcon1 from "../../assets/images/marketingServices1.svg";
+import SoftwaredevIcon1 from "../../assets/images/softwaredev.svg";
+import GraphicsIcon1 from "../../assets/images/Graphics.svg";
+import UiuxDesignIcon1 from "../../assets/images/uiuxDesign.svg";
+import MarketingIcon1 from "../../assets/images/marketing.svg";
+import ApplicationIcon1 from "../../assets/images/application.svg";
+import WebIcon1 from "../../assets/images/web.svg";
 import SectionName from '../SectionName';
 
 const Services = () => {
   const cardsData = [
     {
       id: 1,
-      title: "Website & App Development",
+      title: "Web Development",
       description:
-        "We create custom websites and mobile apps that are user-friendly, visually appealing, and optimized for performance.",
+        "Transform your ideas into reality with responsive and user-friendly websites built to engage and convert visitors.",
       icon1: WebIcon1,
     },
     {
       id: 2,
-      title: "Shopify Development",
+      title: "Application Development",
       description:
-        "We help you build and manage successful online stores using the Shopify platform.",
-      icon1: ShopifyIcon1,
+        "From concept to deployment, we develop mobile and web applications that enhance productivity and streamline business operations.",
+      icon1: ApplicationIcon1,
     },
     {
       id: 3,
       title: "Digital Marketing",
       description:
-        "We provide a comprehensive range of digital marketing services, including SEO, PPC, social media marketing, and email marketing.",
+        "Comprehensive digital marketing services that boost your online presence and drive measurable results.",
       icon1: MarketingIcon1,
     },
     {
       id: 4,
-      title: "Ads Campaign",
+      title: "UI/UX Design",
       description:
-        "We design and execute targeted advertising campaigns to reach your ideal audience and drive conversions.",
-      icon1: AdsIcon1,
+        "Intuitive and visually appealing designs that deliver an exceptional user experience and keep customers coming back.",
+      icon1: UiuxDesignIcon1,
     },
     {
       id: 5,
-      title: "Marketing Services",
+      title: "Graphics Design",
       description:
-        "We offer various marketing services such as content creation, branding, and market research.",
-      icon1: MarketingServicesIcon1,
+        "High-quality graphics that align with your brand and captivate your target audience.",
+      icon1: GraphicsIcon1,
     },
     {
       id: 6,
-      title: "Graphic Design",
+      title: "Software Development",
       description:
-        "Our skilled designers create stunning visuals for your website, marketing materials, and other branding needs.",
-      icon1: GraphicsIcon1,
+        "Robust software solutions tailored to meet your business requirements and improve efficiency.",
+      icon1:  SoftwaredevIcon1,
     },
   ];
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 3000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: 'linear',
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+    arrows: false,
+  };
+
   return (
-    <section className="pb-[100px]">
+    <section id="services" className="pb-[100px]">
       <div className="container">
         <SectionName title="Services" />
-        <div className="flex justify-center items-center mt-14">
-          <h2 className="text-center max-w-[800px] mb-3">
-          Services We Offer
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12 gap-6 justify-between px-3">
-          {cardsData.map((card) => (
-            <SecurityCard
-              key={card.id}
-              title={card.title}
-              description={card.description}
-              icon1={card.icon1}
-            />
-          ))}
+        
+        <div className="mt-14 px-3">
+          <Slider {...settings}>
+            {cardsData.map((card) => (
+              <div key={card.id} className="px-3 slick-slide">
+                <SecurityCard
+                  title={card.title}
+                  description={card.description}
+                  icon1={card.icon1}
+                />
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
     </section>
