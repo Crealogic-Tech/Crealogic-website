@@ -12,9 +12,9 @@ const ProfitSection = ({
   return (
     <section className="relative">
       <div className="container">
-        <div className="flex flex-col lg:flex-row justify-center lg:justify-between gap-14 items-center">
+        <div className="grid  grid-cols- lg:grid-cols-2  justify-center lg:justify-between gap-14 items-center">
           <div
-            className="max-w-[736px] order-2 lg:order-1"
+            className="max-w-[736px] order-2 lg:order-1 opacity-20"
             data-aos="fade-up"
             data-aos-delay="200" // Adjust the delay
           >
@@ -25,7 +25,7 @@ const ProfitSection = ({
             />
           </div>
           <div
-            className="w-full h-full order-1 lg:order-2"
+            className="relative order-1 lg:order-2 flex justify-center items-center"
             data-aos="fade-up"
             data-aos-delay="400" // Adjust the delay
           >

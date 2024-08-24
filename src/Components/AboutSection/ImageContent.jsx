@@ -3,7 +3,7 @@ import React from "react";
 const ImageContent = ({ src, alt, justify }) => {
   return (
     <div
-      className={`flex about__thumb-image ${justify}`}
+      className={`max-w-sm text-center items-center flex about__thumb-image ${justify}`}
       data-aos="fade-up"
       data-aos-delay="400" 
     >

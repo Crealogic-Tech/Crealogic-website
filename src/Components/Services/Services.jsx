@@ -9,7 +9,7 @@ import UiuxDesignIcon1 from "../../assets/images/uiuxDesign.svg";
 import MarketingIcon1 from "../../assets/images/marketing.svg";
 import ApplicationIcon1 from "../../assets/images/application.svg";
 import WebIcon1 from "../../assets/images/web.svg";
-import SectionName from '../SectionName';
+import Divider from "../Divider";
 
 const Services = () => {
   const cardsData = [
@@ -77,6 +77,12 @@ const Services = () => {
       {
         breakpoint: 768,
         settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
           slidesToShow: 1,
         },
       },
@@ -87,9 +93,9 @@ const Services = () => {
   return (
     <section id="services" className="pb-[100px]">
       <div className="container">
-        <SectionName title="Services" />
+        <Divider title="Services" />
         
-        <div className="mt-14 px-3">
+        <div className="mt-20 px-3">
           <Slider {...settings}>
             {cardsData.map((card) => (
               <div key={card.id} className="px-3 slick-slide">

@@ -10,8 +10,8 @@ const Timeline = ({ icon, title, description, aosType, aosDelay }) => {
       <div className="flex justify-center mb-4">
         <img src={icon} alt={title} className="w-24 h-24 aboutImage" />
       </div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-400">{description}</p>
+      <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+      <p className=" text-gray-400">{description}</p>
     </div>
   );
 };

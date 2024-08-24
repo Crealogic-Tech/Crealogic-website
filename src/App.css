@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @font-face {
   font-family: "Amiri";
   src: url("./assets/fonts/Amiri-Bold.woff2") format("woff2"),
@@ -173,7 +171,7 @@ body {
   background-position: center;
   /* background-size: contain;  */
   opacity: 0.1;
-  z-index: -2;
+  z-index: -1;
   animation: logoRotate 20s infinite linear;
 }
 
@@ -241,7 +239,7 @@ h5 {
 
 p {
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0px;
@@ -249,7 +247,7 @@ p {
 
 .container {
   width: 100%;
-  max-width: 1230px;
+  max-width: 1426px;
   min-height: 30px;
   margin-left: auto;
   margin-right: auto;
@@ -435,7 +433,7 @@ p {
 }
 
 .heroHeadding {
-  box-shadow:3px 3px 10px #ddd inset;
+  box-shadow: 3px 3px 10px #ddd inset;
   background: #121215;
 }
 
@@ -450,12 +448,61 @@ p {
   transform: scale(1.2);
 }
 .servicsCard:hover .cardShadow {
-
-  box-shadow:3px 3px 12px #ddd inset;
+  box-shadow: 3px 3px 12px #ddd inset;
   transition: 0.5s linear;
 }
 .servicsCard:hover::before {
   transform: scale(1.1);
   transition: 0.5s linear;
+}
 
+.round {
+  box-shadow: inset 0 -0.4px 0.3px #fff6, inset 0 0.4px 0.3px #0006;
+}
+
+.grid1 {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-rows: auto;
+  grid-template-columns: 0.75fr 1fr;
+  grid-auto-columns: 1fr;
+  align-items: start;
+  width: 100%;
+  max-width: 73rem;
+  display: grid;
+  position: relative;
+}
+
+
+.calender-script {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.video-wrapper-3 {
+  cursor: pointer;
+  border: 1px solid #d7cccc;
+  border-radius: 1.5rem;
+  padding: .75rem;
+  position: relative;
+}
+.video-wrapper-1 {
+  background-color: #7653e6;
+  border: 1px solid #d7cccc;
+  border-radius: 1rem;
+  padding: .75rem;
+}
+
+
+.video-wrapper-3 {
+  cursor: pointer;
+  border: 1px solid #d7cccc;
+  border-radius: 1.5rem;
+  padding: .75rem;
+  position: relative;
+}
+.w-embed:before, .w-embed:after {
+  content: " ";
+  grid-area: 1 / 1 / 2 / 2;
+  display: table;
 }

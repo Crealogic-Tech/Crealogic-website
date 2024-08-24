@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import SectionName from "../SectionName";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Customsolution from "../../assets/images/customsolution.svg";
@@ -9,6 +8,7 @@ import Software from "../../assets/images/software.svg";
 import DateImage from "../../assets/images/24.svg";
 import Methodology from "../../assets/images/methodology.svg";
 import Timeline from "./Timeline";
+import Divider from "../Divider";
 
 const timelineData = [
   {
@@ -22,14 +22,14 @@ const timelineData = [
     icon: Fullstack,
   },
   {
-    title: "Creative UI/UX",
-    description: "Designs that engage and convert your audience.",
-    icon: Uiux,
-  },
-  {
     title: "Scalable Software",
     description: "Future-proof solutions designed to grow with your business.",
     icon: Software,
+  },
+  {
+    title: "Creative UI/UX",
+    description: "Designs that engage and convert your audience.",
+    icon: Uiux,
   },
   {
     title: "24/7 Support",
@@ -51,8 +51,10 @@ const Features = () => {
   return (
     <section className="py-[100px]">
       <div className="container">
-        <SectionName title="Features" />
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+        <Divider 
+          title="Features" 
+        />
+        <div className="grid grid-cols-1 items-stretch mt-20 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
           {timelineData.map((item, index) => (
             <Timeline
               key={index}

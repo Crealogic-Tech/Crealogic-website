@@ -1,17 +1,15 @@
-// src/main.jsx
-
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './App';
-import 'aos/dist/aos.css'; // Import AOS styles
-import AOS from 'aos'; // Import AOS
+import './index.css';
 
-// Initialize AOS
-AOS.init();
+// Assuming you have a root element with id 'root' in your HTML
+const container = document.getElementById('root');
 
-ReactDOM.render(
+// Create a root and render your app
+const root = createRoot(container);
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
