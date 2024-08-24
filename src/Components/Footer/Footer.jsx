@@ -22,9 +22,9 @@ const Footer = () => {
         <div className="container">
           <div className="flex justify-between">
             <div className="flex justify-between w-full items-stretch flex-col px-4 gap-8 ">
-              <div className="flex flex-col md:flex-row gap-14 md:gap-0 justify-center md:justify-between">
-                <div className="flex flex-col gap-4 md:gap-8">
-                  <div className="inline-flex items-center md:items-start flex-col gap-2">
+              <div className="flex flex-col sm:flex-row gap-14 sm:gap-0 justify-center sm:justify-between">
+                <div className="flex flex-col gap-4 sm:gap-8">
+                  <div className="inline-flex items-center sm:items-start flex-col gap-2">
                     <a href="#home" className="inline-block">
                       <span className="text-secondry text-5xl font-amiri font-normal transition-opacity duration-300">
                         Crealogic
@@ -36,7 +36,7 @@ const Footer = () => {
                     </div>
                   </div>
 
-                  <div className="inline-flex items-start justify-center my-5 md:mb-0 md:justify-start flex-row gap-2 [&>a]:text-secondry [&>a]:text-xl">
+                  <div className="inline-flex items-start justify-center my-5 sm:mb-0 sm:justify-start flex-row gap-2 [&>a]:text-secondry [&>a]:text-xl">
                     <a
                       href="https://in.linkedin.com/company/logicwind"
                       target="_blank"
@@ -68,7 +68,7 @@ const Footer = () => {
                   </div>
 
                   <div
-                    className="flex flex-col text-primaryMedium justify-between gap-3 text-md items-start"
+                    className="flex flex-col text-primaryMedium justify-between gap-3 text-sm items-start"
                     data-aos="fade-up"
                     data-aos-delay="100"
                   >
@@ -80,7 +80,7 @@ const Footer = () => {
                       <FaPhoneSquareAlt className="text-xl" />
                       <a
                         href="tel:+918160343175"
-                        className="hover:underline text-sm  md:text-lg"
+                        className="hover:underline text-sm  sm:text-lg"
                       >
                         +91 8160343175
                       </a>
@@ -93,7 +93,7 @@ const Footer = () => {
                       <IoIosMail className="text-xl" />
                       <a
                         href="mailto:crealogictech@gmail.com"
-                        className="hover:underline text-sm  md:text-lg"
+                        className="hover:underline text-sm  sm:text-lg"
                       >
                         crealogictech@gmail.com
                       </a>
@@ -117,10 +117,9 @@ const Footer = () => {
                     <li className="flex gap-2 items-center">
                       <a href="#">Blogs</a>
                       <sup>
-
-                      <p className="bg-[#f04f4b] text-[10px] lg:text-lg rounded-2xl text-secondry py-0.5 px-2">
-                        Coming soon
-                      </p>
+                        <p className="bg-[#f04f4b] text-[12px] font-bold rounded-2xl text-secondry py-0.5 px-2">
+                          Coming soon
+                        </p>
                       </sup>
                     </li>
                   </ul>
@@ -134,14 +133,22 @@ const Footer = () => {
                   business
                 </div>
                 <div className="flex gap-2 text-secondry">
-                  <p className="">
+                  <p className="flex gap-2 items-center">
                     Innovated with care at{" "}
                     <span className="text-secondry text-2xl font-amiri font-normal transition-opacity duration-300">
                       Crealogic
                     </span>
-                  <img src={FooterLogo} alt="" className="block md:hidden w-8" />
+                    <img
+                      src={FooterLogo}
+                      alt=""
+                      className="block sm:hidden w-8"
+                    />
                   </p>
-                  <img src={FooterLogo} alt="" className="hidden md:block  w-8" />
+                  <img
+                    src={FooterLogo}
+                    alt=""
+                    className="hidden sm:block  w-8"
+                  />
                 </div>
               </div>
             </div>

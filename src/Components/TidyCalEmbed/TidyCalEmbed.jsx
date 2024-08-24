@@ -13,15 +13,15 @@ const TidyCalEmbed = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative py-20">
       <Helmet>
         <script src="https://assets.tidycal.com/js/embed.js" async></script>
       </Helmet>
       <section className="py-[100px] flex justify-center items-start">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="flex flex-col md:flex-row justify-center w-full items-center gap-16">
             {/* Left Side Content */}
-            <div className="flex flex-col items-start">
+            <div className=" md:flex-1 flex flex-col items-start">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Chat with Crealogic
               </h2>
@@ -35,8 +35,8 @@ const TidyCalEmbed = () => {
             </div>
 
             {/* Right Side Content (TidyCal Embed) */}
-            <div className="calender-script">
-              <div className="video-wrapper-3">
+            <div className="w-full  md:flex-1 calender-script">
+              <div className="heroHeadding rounded-3xl flex flex-col justify-center p-3  gap-6 md:gap-12 text-white">
                 <div className="video-wrapper-1">
                   <iframe
                     src="https://tidycal.com/581meetmangukiya/30-minute-meeting"

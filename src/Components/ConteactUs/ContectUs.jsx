@@ -5,7 +5,7 @@ import Divider from "../Divider";
 
 const CTASection = ({ ctaText }) => {
   return (
-    <section id="contact" className="py-8">
+    <section id="contact">
       <div className="container">
         <Divider title="Contact Us" />
         <div className="pb-30 my-20 flex  justify-center items-center ">/

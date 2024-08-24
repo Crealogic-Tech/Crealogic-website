@@ -91,7 +91,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="pb-[100px]">
+    <section id="services" className="pb-20">
       <div className="container">
         <Divider title="Services" />
         

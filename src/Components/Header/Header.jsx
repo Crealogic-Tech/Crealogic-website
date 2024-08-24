@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom"; // Import Link and useLocation from react-router-dom
+import { Link, useLocation } from "react-router-dom";
 import HeaderLogo from "../../assets/images/HeaderLogo.svg";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation(); // Get the current location
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,29 +39,33 @@ const Header = () => {
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (!targetElement) {
-      console.log(`Element with ID ${targetId} not found`);
-      return;
+
+    if (location.pathname === "/home") {
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const headerOffset = 80; // Adjust this value to match your header height
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+
+        setIsMenuOpen(false);
+      } else {
+        alert(`Section with ID ${targetId} not found on the current page!`);
+      }
+    } else {
+      // For other pages, just navigate to the route
+      setIsMenuOpen(false);
     }
-
-    console.log(`Scrolling to ${targetId}`);
-
-    const headerOffset = 80; // Adjust this value to match your header height
-    const elementPosition = targetElement.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
-
-    setIsMenuOpen(false);
   };
 
   useEffect(() => {
     if (location.pathname === "/home") {
-      window.scrollTo(0, 0); 
+      window.scrollTo(0, 0);
     }
   }, [location]);
 
@@ -74,11 +78,11 @@ const Header = () => {
             : "absolute top-0 left-0 w-full py-4 z-30"
         }`}
       >
-        <div className="absolute -top-[450px] overflow-hidden left-1/4 w-[500px] h-[500px] rounded-full blur-[190px] bg-gradient-45 opacity-[0.5]"></div>
+        <div className="absolute hidden md:block -top-[450px] overflow-hidden left-1/4 w-[500px] h-[500px] rounded-full blur-[190px] bg-gradient-45 opacity-[0.5]"></div>
 
         <div className="container mx-auto px-6 md:px-12 py-3 flex justify-between items-center relative">
           <div className="logo relative group">
-            <Link to="/#home">
+            <Link to="/home">
               {isScrolled ? (
                 <img
                   src={HeaderLogo}

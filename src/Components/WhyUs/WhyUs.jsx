@@ -62,11 +62,11 @@ const WhyUs = () => {
   ];
 
   return (
-    <section className="pb-[100px]">
+    <section className="pb-20">
       <div className="container">
         <Divider title="Why Us" />
         
-        <div className="text-white mt-20 pb-16">
+        <div className="text-white mt-20 ">
           <div className="flex flex-col lg:flex-row justify-center gap-10 items-stretch">
             <div className="order-2 lg:order-1 flex flex-col w-full items-stretch justify-between gap-5 space-y-5">
               {servicesData.slice(0, 3).map((service, index) => (

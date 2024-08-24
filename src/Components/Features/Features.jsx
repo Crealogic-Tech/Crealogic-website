@@ -49,7 +49,7 @@ const Features = () => {
   }, []);
 
   return (
-    <section className="py-[100px]">
+    <section className="py-20">
       <div className="container">
         <Divider 
           title="Features" 
