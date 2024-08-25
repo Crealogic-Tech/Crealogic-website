@@ -98,7 +98,7 @@ const WhyUs = () => {
                   description={service.description}
                   icon={service.icon}
                   data-aos="fade-up"
-                  data-aos-delay={`${(index + 3) * 100}`} // Delay for each card, adjusted for the second group
+                  data-aos-delay={`${(index + 3) * 100}`} 
                 />
               ))}
             </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from 'react-helmet';
-import 'aos/dist/aos.css'; // Import AOS styles
+import 'aos/dist/aos.css'; 
 import AOS from 'aos';
 import Button from "../Button";
 
@@ -15,10 +15,10 @@ const HeroSection = () => {
   const handleButtonClick = (e) => {
     e.preventDefault();
 
-    // Add a small delay for smooth transition effect
+    
     setTimeout(() => {
       navigate("/contact");
-    }, 300); // 300ms delay for smooth transition
+    }, 300);
   };
 
   return (

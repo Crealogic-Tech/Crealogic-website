@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS styles
+import "aos/dist/aos.css";
 import AboutImage from "../../assets/images/aboutus.svg";
 import ProfitSection from "./ProfitSection";
 import Divider from "../Divider";
@@ -8,7 +8,7 @@ import Divider from "../Divider";
 
 export const AboutSection = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true }); // Initialize AOS
+    AOS.init({ duration: 1000, once: true }); 
   }, []);
 
   return (

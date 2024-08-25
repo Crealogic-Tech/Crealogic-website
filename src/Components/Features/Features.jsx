@@ -63,8 +63,8 @@ const Features = () => {
               icon={item.icon}
               title={item.title}
               description={item.description}
-              aosType="fade-up" // You can change this to any AOS animation type
-              aosDelay={index * 100} // Stagger delay by 100ms for each card
+              aosType="fade-up" 
+              aosDelay={index * 100} 
             />
           ))}
         </div>

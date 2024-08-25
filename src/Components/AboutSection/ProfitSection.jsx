@@ -16,7 +16,7 @@ const ProfitSection = ({
           <div
             className="max-w-[736px] order-2 lg:order-1 opacity-20"
             data-aos="fade-up"
-            data-aos-delay="200" // Adjust the delay
+            data-aos-delay="200" 
           >
             <TextContent
               title={title}
@@ -27,7 +27,7 @@ const ProfitSection = ({
           <div
             className="relative order-1 lg:order-2 flex justify-center items-center"
             data-aos="fade-up"
-            data-aos-delay="400" // Adjust the delay
+            data-aos-delay="400" 
           >
             <ImageContent
               src={imageSrc}

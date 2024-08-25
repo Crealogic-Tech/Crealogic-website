@@ -1,5 +1,5 @@
 import React from "react";
-import "aos/dist/aos.css"; // Ensure AOS styles are imported
+import "aos/dist/aos.css"; 
 
 const Button = ({ href,children, onClick, aosType }) => {
   return (
@@ -21,8 +21,8 @@ const Button = ({ href,children, onClick, aosType }) => {
         active:scale-[0.92]
       "
         data-aos={aosType}
-        data-aos-duration="1000" // Duration of animation in milliseconds
-        data-aos-delay="1000" // Delay before animation starts
+        data-aos-duration="1000" 
+        data-aos-delay="1000" 
       >
         {children}
         <span

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import HeaderLogo from "../../assets/images/HeaderLogo.svg";
-import { IoHome } from "react-icons/io5"; // Import the Home icon
+import { IoHome } from "react-icons/io5"; 
 
 const SecondHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +30,7 @@ const SecondHeader = () => {
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
-        const headerOffset = 80; // Adjust this value to match your header height
+        const headerOffset = 80; 
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 

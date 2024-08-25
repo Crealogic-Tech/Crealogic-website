@@ -8,12 +8,12 @@ const Contact = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a delay for data fetching
+    
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Adjust the delay to match your data fetching time
+    }, 2000); 
 
-    // Clean up the timer if the component unmounts
+    
     return () => clearTimeout(timer);
   }, []);
 

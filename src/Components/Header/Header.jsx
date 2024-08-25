@@ -45,7 +45,7 @@ const Header = () => {
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
-        const headerOffset = 80; // Adjust this value to match your header height
+        const headerOffset = 80; 
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -59,7 +59,6 @@ const Header = () => {
         alert(`Section with ID ${targetId} not found on the current page!`);
       }
     } else {
-      // For other pages, just navigate to the route
       setIsMenuOpen(false);
     }
   };
@@ -82,7 +81,7 @@ const Header = () => {
         <div className="absolute hidden md:block -top-[450px] overflow-hidden left-1/4 w-[500px] h-[500px] rounded-full blur-[190px] bg-gradient-45 opacity-[0.5]"></div>
 
         <div className="container mx-auto px-6 md:px-12 py-3 flex justify-between items-center relative">
-          <div className="logo relative group">
+          <div className="">
             <Link to="/home">
               {isScrolled ? (
                 <img

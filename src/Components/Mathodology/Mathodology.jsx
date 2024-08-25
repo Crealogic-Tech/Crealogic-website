@@ -18,7 +18,7 @@ const Methodologies = () => {
   const methodologiesRef = useRef(null);
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true }); // Initialize AOS
+    AOS.init({ duration: 1000, once: true });
 
     const handleScroll = () => {
       const section = methodologiesRef.current;
@@ -36,7 +36,7 @@ const Methodologies = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check scroll position on mount
+    handleScroll(); 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -104,7 +104,7 @@ const Methodologies = () => {
                   title={methodology.title}
                   description={methodology.description}
                   icon={methodology.icon}
-                  aosDelay={index * 200} // Delay for each card
+                  aosDelay={index * 200} 
                 />
               ))}
             </div>
@@ -125,7 +125,7 @@ const Methodologies = () => {
                   title={methodology.title}
                   description={methodology.description}
                   icon={methodology.icon}
-                  aosDelay={index * 200 + 600} // Adjust delay for second set
+                  aosDelay={index * 200 + 600}
                 />
               ))}
             </div>
