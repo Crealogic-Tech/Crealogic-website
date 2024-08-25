@@ -18,7 +18,7 @@ export const AboutSection = () => {
         
         <div className="mt-20">
           <ProfitSection
-            title="Innovating Digital Solutions to Drive Your Business Success"
+            title="Crafting Future-Ready Digital Experiences for Your Business"
             description="At Crealogic, we are committed to driving innovation and creating digital solutions tailored to your business needs. With a passion for creativity and a focus on technology, we deliver exceptional experiences that help you stand out in a crowded marketplace."
             imageSrc={AboutImage}
             imageAlt="Profit Image"
