@@ -82,13 +82,13 @@ const Footer = () => {
                 >
                   <FaLinkedin />
                 </a>
-                <a
+                {/* <a
                   href="https://x.com/Crealogictech"
                   target="_blank"
                   className="w-inline-block"
                 >
                   <FaSquareXTwitter />
-                </a>
+                </a> */}
 
                 <a
                   href="https://medium.com/@crealogictech"
