@@ -7,9 +7,7 @@ const TidyCalEmbed = () => {
     document.body.style.overflow = "hidden";
 
     // Re-enable body scroll when the component is unmounted
-    return () => {
-      document.body.style.overflow = "auto";
-    };
+  
   }, []);
 
   return (

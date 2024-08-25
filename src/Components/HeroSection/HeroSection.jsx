@@ -30,7 +30,7 @@ const HeroSection = () => {
           <div className="flex items-center flex-col justify-center text-center">
             <div className="max-w-[950px]">
               <h1 
-                className="font-amiri text-4xl md:text-6xl lg:text-7xl text-white"
+                className="font-amiri text-3xl md:text-6xl lg:text-7xl text-white"
                 data-aos="fade-up" 
                 data-aos-duration="1000"
               >

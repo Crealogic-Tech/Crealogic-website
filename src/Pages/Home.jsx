@@ -6,10 +6,12 @@ import Services from "../Components/Services/Services";
 import WhyUs from "../Components/WhyUs/WhyUs";
 import Methodologies from "../Components/Mathodology/Mathodology";
 import CTASection from "../Components/ConteactUs/ContectUs";
+import Header from "../Components/Header/Header";
 
 const Home = () => {
   return (
     <div className="relative overflow-hidden">
+       <Header /> 
       <HeroSection />
       <AboutSection />
       <Features />

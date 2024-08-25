@@ -285,9 +285,9 @@ p {
   /* Add more angles as needed */
 }
 
-.headerLogo {
+/* .headerLogo {
   animation: logoRotate 5s infinite linear;
-}
+} */
 
 @keyframes logoRotate {
   0% {
