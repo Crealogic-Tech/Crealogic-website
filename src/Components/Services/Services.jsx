@@ -91,7 +91,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services " className="pb-20 relative">
+    <section id="services" className="pb-20 relative">
       <div className=" ">
         <div className="absolute block sm:hidden -top-36 sm:-top-20 -right-36 ght sm:-right-20 w-[300px] h-[300px] -z-10 rounded-full blur-[100px] bg-gradient-45 opacity-[0.3]"></div>
       </div>

@@ -24,13 +24,13 @@ const Footer = () => {
           <div className="flex justify-between w-full items-stretch flex-col px-4 gap-8 ">
             <div className="flex flex-col sm:flex-row gap-5 sm:gap-0 justify-center sm:justify-between">
               <div className="flex flex-col gap-4 sm:gap-8">
-                <div className="inline-flex items-center ju flex-col gap-2">
+                <div className="inline-flex items-center md:items-start flex-col gap-2">
                   <a href="#home" className="inline-block">
                     <span className="text-secondry text-5xl font-amiri font-normal transition-opacity duration-300">
                       Crealogic
                     </span>
                   </a>
-                  <div className="flex justify-center items-center gap-3">
+                  <div className="flex justify-center items-center md:text-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-secondry"></div>
                     <p className="font-normal text-secondry">Surat</p>
                   </div>

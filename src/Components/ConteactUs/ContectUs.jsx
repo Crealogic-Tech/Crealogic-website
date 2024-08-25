@@ -14,7 +14,7 @@ const CTASection = ({ ctaText }) => {
             <div className="absolute bolck sm:hidden -top-48 -right-36 ght w-[300px] h-[300px] -z-10 rounded-full blur-[100px] bg-gradient-45 opacity-[0.3]"></div>
           </div>
           <div className="heroHeadding rounded-lg flex flex-col justify-center p-12 items-center gap-6 md:gap-12 text-white">
-            <p className="text-2xl lg:text-[64px] font-semibold text-white text-center md:mb-6">
+            <p className="text-2xl lg:text-[60px] font-amiri font-semibold text-white text-center md:mb-6">
               {ctaText}
             </p>
             <div className="flex justify-center items-center pt-2">

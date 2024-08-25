@@ -1,21 +1,15 @@
-
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HeaderLogo from "../../assets/images/HeaderLogo.svg";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 200);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -40,34 +34,24 @@ const Header = () => {
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
+    const targetElement = document.getElementById(targetId);
 
-    if (location.pathname === "/home") {
-      const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const headerOffset = 80; // Adjust this offset if needed
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
 
-      if (targetElement) {
-        const headerOffset = 80; 
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-
-        setIsMenuOpen(false);
-      } else {
-        alert(`Section with ID ${targetId} not found on the current page!`);
-      }
-    } else {
       setIsMenuOpen(false);
+    } else {
+      console.warn(`Section with ID ${targetId} not found!`);
     }
   };
-
-  useEffect(() => {
-    if (location.pathname === "/home") {
-      window.scrollTo(0, 0);
-    }
-  }, [location]);
 
   return (
     <>
@@ -79,22 +63,21 @@ const Header = () => {
         }`}
       >
         <div className="absolute hidden md:block -top-[450px] overflow-hidden left-1/4 w-[500px] h-[500px] rounded-full blur-[190px] bg-gradient-45 opacity-[0.5]"></div>
-
-        <div className="container mx-auto px-6 md:px-12 py-3 flex justify-between items-center relative">
-          <div className="">
-            <Link to="/home">
-              {isScrolled ? (
-                <img
-                  src={HeaderLogo}
-                  alt="Logo"
-                  className="w-14 transition-opacity duration-1000 "
-                />
-              ) : (
-                <span className="text-secondry text-5xl font-amiri font-normal transition-opacity duration-300">
-                  Crealogic
-                </span>
-              )}
-            </Link>
+        <div className="container mx-auto px-6 md:px-12 py-3 flex justify-between items-center">
+          <div>
+          <Link to="/home">
+            {isScrolled ? (
+              <img
+                src={HeaderLogo}
+                alt="Logo"
+                className="w-14 transition-opacity duration-1000"
+              />
+            ) : (
+              <span className="text-secondry text-5xl font-amiri font-normal transition-opacity duration-300">
+                Crealogic
+              </span>
+            )}
+          </Link>
           </div>
           <button className="lg:hidden text-secondry p-2" onClick={toggleMenu}>
             {isMenuOpen ? (
@@ -104,56 +87,61 @@ const Header = () => {
             )}
           </button>
           <div className="hidden lg:flex">
-            <div className="flex items-center justify-center border-l lg:border-l-0">
-              <div className="flex flex-col h-full justify-between lg:items-center lg:flex-row">
-                <ul className="pt-20 text-accentLight space-y-8 lg:space-y-0 lg:flex lg:space-x-12 lg:pt-0">
-                  <li>
-                    <Link
-                      to="/home"
-                      className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
+            <ul className="flex space-x-12">
+              <li>
+                <div className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
+                  <span className="relative group-hover:text-primaryLight font-medium transition-colors duration-300   text-secondry">
+                    <a
+                      href="#home"
+                      className="hidden lg:inline"
                       onClick={(e) => handleNavClick(e, "home")}
                     >
-                      <span className="relative group-hover:text-primaryLight lg:text-primaryMedium font-medium">
-                        Home
-                      </span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/about"
-                      className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
+                      Home
+                    </a>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
+                  <span className="relative group-hover:text-primaryLight font-medium transition-colors duration-300   text-secondry">
+                    <a
+                      href="#about"
+                      className="hidden lg:inline"
                       onClick={(e) => handleNavClick(e, "about")}
                     >
-                      <span className="relative group-hover:text-primaryLight lg:text-primaryMedium font-medium">
-                        About Us
-                      </span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/services"
-                      className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
+                      about
+                    </a>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
+                  <span className="relative group-hover:text-primaryLight font-medium transition-colors duration-300   text-secondry">
+                    <a
+                      href="#services"
+                      className="hidden lg:inline"
                       onClick={(e) => handleNavClick(e, "services")}
                     >
-                      <span className="relative group-hover:text-primaryLight lg:text-primaryMedium font-medium">
-                        Services
-                      </span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/contact"
-                      className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
+                      services
+                    </a>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
+                  <span className="relative group-hover:text-primaryLight font-medium transition-colors duration-300   text-secondry">
+                    <a
+                      href="#contact"
+                      className="hidden lg:inline"
                       onClick={(e) => handleNavClick(e, "contact")}
                     >
-                      <span className="relative group-hover:text-primaryLight lg:text-primaryMedium font-medium whitespace-nowrap">
-                        Contact Us
-                      </span>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
+                      Contact Us
+                    </a>
+                  </span>
+                </div>
+              </li>
+             
+            </ul>
           </div>
         </div>
       </header>
@@ -165,46 +153,46 @@ const Header = () => {
         onClick={closeMenu}
       >
         <nav
-          className={`relative top-0 left-0 w-full h-full bg-transparent transition-transform duration-300 flex flex-col items-center justify-center ${
+          className={`relative top-0 left-0 w-full h-full bg-transparent flex flex-col items-center justify-center transition-transform duration-300 ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <ul className="flex flex-col items-center space-y-8">
             <li>
-              <Link
-                to="/home"
+              <a
+                href="#home"
                 className="text-secondry text-2xl font-medium hover:text-primaryLight"
                 onClick={(e) => handleNavClick(e, "home")}
               >
                 Home
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
-                to="/about"
+              <a
+                href="#about"
                 className="text-secondry text-2xl font-medium hover:text-primaryLight"
                 onClick={(e) => handleNavClick(e, "about")}
               >
                 About Us
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
-                to="/services"
+              <a
+                href="#services"
                 className="text-secondry text-2xl font-medium hover:text-primaryLight"
                 onClick={(e) => handleNavClick(e, "services")}
               >
                 Services
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
-                to="/contact"
+              <a
+                href="#contact"
                 className="text-secondry text-2xl font-medium hover:text-primaryLight"
                 onClick={(e) => handleNavClick(e, "contact")}
               >
                 Contact Us
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>
