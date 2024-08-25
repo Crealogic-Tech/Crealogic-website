@@ -157,6 +157,12 @@ body {
   @apply overflow-x-hidden;
 }
 
+
+/* Style the entire scrollbar */
+body::-webkit-scrollbar {
+    display:none; /* Set the width of the scrollbar */
+}
+
 .heroBG:before {
   content: "";
   position: absolute;
@@ -285,9 +291,9 @@ p {
   /* Add more angles as needed */
 }
 
-/* .headerLogo {
+.headerLogo {
   animation: logoRotate 5s infinite linear;
-} */
+}
 
 @keyframes logoRotate {
   0% {
@@ -505,4 +511,8 @@ p {
   content: " ";
   grid-area: 1 / 1 / 2 / 2;
   display: table;
+}
+
+.userIsFree{
+  background-color: rgba(96,120,131,1) !important;
 }

@@ -62,7 +62,11 @@ const WhyUs = () => {
   ];
 
   return (
-    <section className="pb-20">
+    <section className="pb-20 relative">
+      <div className=" ">
+        <div className="absolute block sm:hidden   -left-20 -top-36 w-[300px] h-[300px] -z-10 rounded-full blur-[100px] bg-gradient-45 opacity-[0.3]"></div>
+        
+      </div>
       <div className="container">
         <Divider title="Why Us" />
         
@@ -76,13 +80,13 @@ const WhyUs = () => {
                   description={service.description}
                   icon={service.icon}
                   data-aos="fade-up"
-                  data-aos-delay={`${index * 100}`} // Delay for each card
+                  data-aos-delay={`${index * 100}`} 
                 />
               ))}
             </div>
 
             <div className="relative order-1 lg:order-2 flex justify-center items-center">
-              <div className="absolute top-[0] right-6 w-full h-full md:w-[300px] md:h-[300px] rounded-full blur-[100px] opacity-10 bg-gradient-45 "></div>
+              <div className="absolute hidden sm:block top-[0] right-6 w-full h-full md:w-[300px] md:h-[300px] rounded-full blur-[100px] opacity-10 bg-gradient-45 "></div>
               <img src={WhyUsImage} alt="Center Graphic" className="max-w-sm text-center flex items-center" />
             </div>
 

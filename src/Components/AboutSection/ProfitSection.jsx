@@ -12,7 +12,7 @@ const ProfitSection = ({
   return (
     <section className="relative">
       <div className="container">
-        <div className="grid  grid-cols- lg:grid-cols-2  justify-center lg:justify-between gap-14 items-center">
+        <div className="grid  grid-cols-1 md:grid-cols-2  justify-center lg:justify-between gap-14 items-center">
           <div
             className="max-w-[736px] order-2 lg:order-1 opacity-20"
             data-aos="fade-up"

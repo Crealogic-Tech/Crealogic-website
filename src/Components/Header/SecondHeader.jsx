@@ -80,17 +80,24 @@ const SecondHeader = () => {
         </div>
         <div className="flex items-center justify-center lg:border-l-0">
           <div className="flex flex-col h-full justify-between lg:items-center lg:flex-row">
-            <ul className="text-accentLight space-y-8 lg:space-y-0 lg:flex lg:space-x-12 lg:pt-0">
+            <ul className="space-y-8 lg:space-y-0 lg:flex lg:space-x-12 lg:pt-0">
               <li>
                 <Link
                   to="/home"
                   className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
                   onClick={(e) => handleNavClick(e, "home")}
                 >
-                  <span className="relative group-hover:text-primaryLight text-secondry font-medium">
-                   
+                  <span
+                    className={`relative group-hover:text-primaryLight font-medium transition-colors duration-300 ${
+                      isScrolled ? "text-primaryDark" : "text-secondry"
+                    }`}
+                  >
                     <span className="hidden lg:inline">Home</span>
-                    <IoHome className="inline lg:hidden text-3xl" />
+                    <IoHome
+                      className={`inline lg:hidden text-3xl transition-colors duration-300 ${
+                        isScrolled ? "text-primaryLight" : "text-secondry"
+                      }`}
+                    />
                   </span>
                 </Link>
               </li>

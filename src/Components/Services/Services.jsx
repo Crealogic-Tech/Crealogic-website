@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";  
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import SecurityCard from "../Card";
 import SoftwaredevIcon1 from "../../assets/images/softwaredev.svg";
 import GraphicsIcon1 from "../../assets/images/Graphics.svg";
@@ -53,7 +53,7 @@ const Services = () => {
       title: "Software Development",
       description:
         "Robust software solutions tailored to meet your business requirements and improve efficiency.",
-      icon1:  SoftwaredevIcon1,
+      icon1: SoftwaredevIcon1,
     },
   ];
 
@@ -65,7 +65,7 @@ const Services = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 0,
-    cssEase: 'linear',
+    cssEase: "linear",
     pauseOnHover: true,
     responsive: [
       {
@@ -91,10 +91,13 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="pb-20">
+    <section id="services " className="pb-20 relative">
+      <div className=" ">
+        <div className="absolute block sm:hidden -top-36 sm:-top-20 -right-36 ght sm:-right-20 w-[300px] h-[300px] -z-10 rounded-full blur-[100px] bg-gradient-45 opacity-[0.3]"></div>
+      </div>
       <div className="container">
         <Divider title="Services" />
-        
+
         <div className="mt-20 px-3">
           <Slider {...settings}>
             {cardsData.map((card) => (

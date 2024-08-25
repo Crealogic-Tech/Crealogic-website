@@ -7,7 +7,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className=''>
+    <div className='overflow-hidden'>
     <Router>
       <Routes>
         <Route path="/home" element={<Home />} />

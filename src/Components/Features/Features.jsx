@@ -49,11 +49,13 @@ const Features = () => {
   }, []);
 
   return (
-    <section className="py-20">
+    <section className="py-20 relative">
+      <div className=" ">
+        <div className="absolute block sm:hidden  -right-20 -top-5 w-[300px] h-[300px] -z-10 rounded-full blur-[100px] bg-gradient-45 opacity-[0.3]"></div>
+       
+      </div>
       <div className="container">
-        <Divider 
-          title="Features" 
-        />
+        <Divider title="Features" />
         <div className="grid grid-cols-1 items-stretch mt-20 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
           {timelineData.map((item, index) => (
             <Timeline

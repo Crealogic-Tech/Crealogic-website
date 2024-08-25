@@ -1,14 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos';
 import Button from "../Button";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   React.useEffect(() => {
     AOS.init();
   }, []);
+
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+
+    // Add a small delay for smooth transition effect
+    setTimeout(() => {
+      navigate("/contact");
+    }, 300); // 300ms delay for smooth transition
+  };
 
   return (
     <div id="home" className="relative">
@@ -20,24 +31,24 @@ const HeroSection = () => {
       <section className="heroBG relative w-full pt-48 pb-36 md:py-72">
         <div className=" ">
           <div
-            className="absolute -left-20 top-[80%] w-[300px] h-[300px] rounded-full blur-[100px] bg-gradient-45 opacity-[0.5]"
+            className="absolute -left-20 top-[80%] w-[300px] h-[300px] -z-10 rounded-full blur-[100px] bg-gradient-45 opacity-[0.5]"
           ></div>
           <div
-            className="absolute  -top-20 -right-20 w-[300px] h-[300px] rounded-full blur-[100px] bg-gradient-45 opacity-[0.5]"
+            className="absolute  -top-20 -right-20 w-[300px] h-[300px] -z-10 rounded-full blur-[100px] bg-gradient-45 opacity-[0.5]"
           ></div>
         </div>
         <div className="container z-10">
           <div className="flex items-center flex-col justify-center text-center">
             <div className="max-w-[950px]">
               <h1 
-                className="font-amiri text-3xl md:text-6xl lg:text-7xl text-white"
+                className="font-amiri  text-4xl -z-10 sm:text-5xl md:text-6xl lg:text-7xl text-white"
                 data-aos="fade-up" 
                 data-aos-duration="1000"
               >
                 Crafting Your Business with Innovative IT Solutions!
               </h1>
               <p
-                className="mx-auto md:max-w-[800px] text-lg md:text-xl font-chakra pt-5 text-primaryMedium"
+                className="mx-auto md:max-w-[800px] text-justify sm:text-center text-lg md:text-xl font-chakra pt-5 text-primaryMedium"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay="800"
@@ -46,13 +57,9 @@ const HeroSection = () => {
               </p>
             </div>
             <div className="flex justify-center items-center mt-10 pt-2">
-              <Link to="/contact">
-                <Button
-                  aosType="fade-up"
-                >
-                  Let's Get Started!
-                </Button>
-              </Link>
+              <Button onClick={handleButtonClick}>
+                Let's Get Started!
+              </Button>
             </div>
           </div>
         </div>

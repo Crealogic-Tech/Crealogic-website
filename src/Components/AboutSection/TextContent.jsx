@@ -10,7 +10,7 @@ const TextContent = ({ title, description}) => {
       {/* <h2 className="text-center text-4xl md:text-5xl lg:text-start mb-3">
         {title}
       </h2> */}
-      <p className="text-center md:pr-10 mt-4 text-primaryMedium  lg:text-start text-2xl">
+      <p className=" md:pr-10 mt-4 text-primaryMedium text-justify  md:text-start text-2xl">
         {description}
       </p>
 

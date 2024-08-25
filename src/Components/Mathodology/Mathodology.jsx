@@ -68,7 +68,8 @@ const Methodologies = () => {
     {
       id: 4,
       title: "Testing & Launch: ",
-      description: "Ensuring all aspects are tested rigorously before going live.",
+      description:
+        "Ensuring all aspects are tested rigorously before going live.",
       icon: TestingImage,
     },
     {
@@ -86,9 +87,12 @@ const Methodologies = () => {
   ];
 
   return (
-    <section className="pb-20 " ref={methodologiesRef}>
+    <section className="pb-20 relative" ref={methodologiesRef}>
+      <div className=" ">
+        <div className="absolute block sm:hidden -left-20 -top-36 w-[300px] h-[300px] -z-10 rounded-full blur-[100px] bg-gradient-45 opacity-[0.3]"></div>
+        
+      </div>
       <div className="container">
-
         <Divider title="Methodologies" />
 
         <div className="text-whitef  mt-20 ">
@@ -106,6 +110,7 @@ const Methodologies = () => {
             </div>
 
             <div className="relative order-1 lg:order-2 flex justify-center items-center">
+              <div className="absolute top-0 right-6  md:w-[300px] md:h-[300px] rounded-full blur-[50px] opacity-15 bg-gradient-45 "></div>
               <img
                 src={MethodImage}
                 alt="Center Graphic"
