@@ -49,8 +49,6 @@ const HeroSection = () => {
               <Link to="/contact">
                 <Button
                   aosType="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="1800"
                 >
                   Let's Get Started!
                 </Button>

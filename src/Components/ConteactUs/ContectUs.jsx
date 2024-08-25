@@ -23,10 +23,6 @@ const CTASection = ({ ctaText }) => {
   );
 };
 
-CTASection.propTypes = {
-  ctaText: PropTypes.string.isRequired,
-  buttonText: PropTypes.string.isRequired,
-  buttonLink: PropTypes.string.isRequired,
-};
+
 
 export default CTASection;
