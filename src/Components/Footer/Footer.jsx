@@ -27,7 +27,7 @@ const Footer = () => {
                 <div className="inline-flex items-center md:items-start flex-col gap-2">
                   <a href="#home" className="inline-block">
                     <span className="text-secondry text-5xl font-amiri font-normal transition-opacity duration-300">
-                      Crealogic
+                      Crealogic 
                     </span>
                   </a>
                   <div className="flex justify-center items-center md:text-start gap-3">
@@ -98,14 +98,14 @@ const Footer = () => {
                   <FaMedium />
                 </a>
                 <a
-                  href="https://www.instagram.com/crealogictech "
+                  href="https://www.instagram.com/crealogictech"
                   target="_blank"
                   className="w-inline-block"
                 >
                   <FaInstagram />
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/crealogictech"
+                  href="https://www.facebook.com/crealogictech"
                   target="_blank"
                   className="w-inline-block"
                 >
