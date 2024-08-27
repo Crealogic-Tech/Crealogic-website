@@ -110,7 +110,7 @@ const Methodologies = () => {
             </div>
 
             <div className="relative order-1 lg:order-2 flex justify-center items-center">
-              <div className="absolute top-0 right-6  md:w-[300px] md:h-[300px] rounded-full blur-[50px] opacity-15 bg-gradient-45 "></div>
+              <div className="absolute hidden lg:block top-0 right-6  md:w-[300px] md:h-[300px] rounded-full blur-[50px] opacity-15 bg-gradient-45 "></div>
               <img
                 src={MethodImage}
                 alt="Center Graphic"
