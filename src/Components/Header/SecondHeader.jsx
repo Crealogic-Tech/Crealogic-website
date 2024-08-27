@@ -26,7 +26,7 @@ const SecondHeader = () => {
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
 
-    if (location.pathname === "/home") {
+    if (location.pathname === "/") {
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
@@ -42,12 +42,12 @@ const SecondHeader = () => {
         alert(`Section with ID ${targetId} not found on the current page!`);
       }
     } else {
-      navigate("/home");
+      navigate("/");
     }
   };
 
   useEffect(() => {
-    if (location.pathname === "/home") {
+    if (location.pathname === "/") {
       window.scrollTo(0, 0);
     }
   }, [location]);
@@ -64,7 +64,7 @@ const SecondHeader = () => {
 
       <div className="container mx-auto px-6 md:px-12 py-3 flex justify-between items-center relative">
         <div className="logo relative group">
-          <Link to="/home">
+          <Link to="/">
             {isScrolled ? (
               <img
                 src={HeaderLogo}
@@ -83,9 +83,9 @@ const SecondHeader = () => {
             <ul className="space-y-8 lg:space-y-0 lg:flex lg:space-x-12 lg:pt-0">
               <li>
                 <Link
-                  to="/home"
+                  to="/"
                   className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
-                  onClick={(e) => handleNavClick(e, "home")}
+                  onClick={(e) => handleNavClick(e, "/")}
                 >
                   <span
                     className={`relative group-hover:text-primaryLight font-medium transition-colors duration-300 ${

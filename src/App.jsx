@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import Contact from './Pages/Conteact';
 import Footer from './Components/Footer/Footer'; 
@@ -10,9 +10,9 @@ function App() {
     <div className='overflow-hidden'>
     <Router>
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/" element={<Home />} /> 
+        {/* <Route path="/home" element={<Home />} /> */}
+        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/" element={<Home />} /> 
       </Routes>
       <Footer />
     </Router>
