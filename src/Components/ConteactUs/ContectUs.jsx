@@ -1,9 +1,20 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import Button from "../Button";
 import Divider from "../Divider";
 
 const CTASection = ({ ctaText }) => {
+  
+  const navigate = useNavigate();
+
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    
+    setTimeout(() => {
+      navigate("/contact");
+    }, 300);
+  };
+
   return (
     <section id="contact" className="relative">
       <div className="container">
@@ -18,7 +29,7 @@ const CTASection = ({ ctaText }) => {
               {ctaText}
             </p>
             <div className="flex justify-center items-center pt-2">
-              <Button href="/contact">Book a call</Button>
+              <Button onClick={handleButtonClick} >Book a call</Button>
             </div>
           </div>
         </div>
