@@ -92,7 +92,7 @@ const SecondHeader = () => {
                       isScrolled ? "text-primaryDark" : "text-secondry"
                     }`}
                   >
-                    <span className="hidden lg:inline">Home</span>
+                    <span className="hidden capitalize lg:inline">Home</span>
                     <IoHome
                       className={`inline lg:hidden text-3xl transition-colors duration-300 ${
                         isScrolled ? "text-primaryLight" : "text-secondry"

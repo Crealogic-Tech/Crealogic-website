@@ -73,7 +73,7 @@ const Header = () => {
                 className="w-14 transition-opacity duration-1000"
               />
             ) : (
-              <span className="text-secondry text-5xl font-amiri font-normal transition-opacity duration-300">
+              <span className="text-secondry text-5xl font-amiri font-normal  transition-opacity duration-300">
                 Crealogic
               </span>
             )}
@@ -90,7 +90,7 @@ const Header = () => {
             <ul className="flex space-x-12">
               <li>
                 <div className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
-                  <span className="relative group-hover:text-primaryLight font-medium transition-colors duration-300   text-secondry">
+                  <span className="relative group-hover:text-primaryLight capitalize font-medium transition-colors duration-300   text-secondry">
                     <a
                       href="#home"
                       className="hidden lg:inline"
@@ -103,7 +103,7 @@ const Header = () => {
               </li>
               <li>
                 <div className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
-                  <span className="relative group-hover:text-primaryLight font-medium transition-colors duration-300   text-secondry">
+                  <span className="relative group-hover:text-primaryLight capitalize font-medium transition-colors duration-300   text-secondry">
                     <a
                       href="#about"
                       className="hidden lg:inline"
@@ -116,7 +116,7 @@ const Header = () => {
               </li>
               <li>
                 <div className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
-                  <span className="relative group-hover:text-primaryLight font-medium transition-colors duration-300   text-secondry">
+                  <span className="relative group-hover:text-primaryLight capitalize font-medium transition-colors duration-300   text-secondry">
                     <a
                       href="#services"
                       className="hidden lg:inline"
@@ -129,7 +129,7 @@ const Header = () => {
               </li>
               <li>
                 <div className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
-                  <span className="relative group-hover:text-primaryLight font-medium transition-colors duration-300   text-secondry">
+                  <span className="relative group-hover:text-primaryLight capitalize font-medium transition-colors duration-300   text-secondry">
                     <a
                       href="#contact"
                       className="hidden lg:inline"
@@ -161,7 +161,7 @@ const Header = () => {
             <li>
               <a
                 href="#home"
-                className="text-secondry text-2xl font-medium hover:text-primaryLight"
+                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
                 onClick={(e) => handleNavClick(e, "home")}
               >
                 Home
@@ -170,7 +170,7 @@ const Header = () => {
             <li>
               <a
                 href="#about"
-                className="text-secondry text-2xl font-medium hover:text-primaryLight"
+                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
                 onClick={(e) => handleNavClick(e, "about")}
               >
                 About Us
@@ -179,7 +179,7 @@ const Header = () => {
             <li>
               <a
                 href="#services"
-                className="text-secondry text-2xl font-medium hover:text-primaryLight"
+                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
                 onClick={(e) => handleNavClick(e, "services")}
               >
                 Services
@@ -188,7 +188,7 @@ const Header = () => {
             <li>
               <a
                 href="#contact"
-                className="text-secondry text-2xl font-medium hover:text-primaryLight"
+                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
                 onClick={(e) => handleNavClick(e, "contact")}
               >
                 Contact Us
