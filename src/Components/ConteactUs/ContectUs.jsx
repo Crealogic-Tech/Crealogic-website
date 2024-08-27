@@ -18,7 +18,7 @@ const CTASection = ({ ctaText }) => {
               {ctaText}
             </p>
             <div className="flex justify-center items-center pt-2">
-              <Button href="#contact">Book a call</Button>
+              <Button href="/contact">Book a call</Button>
             </div>
           </div>
         </div>
