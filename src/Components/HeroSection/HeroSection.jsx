@@ -14,14 +14,13 @@ const HeroSection = () => {
 
   const handleButtonClick = (e) => {
     e.preventDefault();
-
-    // Navigate to the contact page
-    navigate("/Contact", { replace: true });
-
+    
     setTimeout(() => {
-      window.location.reload();
-    }, 100); // Adjust the delay if necessary
+      navigate("/Contact");
+    }, 300);
+    // window.scrollTo(0, 0);
   };
+
 
   return (
     <div id="home" className="relative">
