@@ -54,7 +54,6 @@ const Header = () => {
 
   const handleLogoClick = (e) => {
     e.preventDefault();
-    // Add any logic here if you want to handle the logo click without reloading the page
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -66,7 +65,7 @@ const Header = () => {
       <header
         className={`transition-all duration-300 ease-in-out ${
           isScrolled
-            ? "fixed top-0 left-0 w-full py-4 z-40 bg-transparent transition-transform duration-1000 ease-in-out backdrop-blur-lg transform translate-y-0 shadow-xl"
+            ? "fixed top-0 left-0 w-full py-4 z-40 bg-transparent backdrop-blur-lg shadow-xl"
             : "absolute top-0 left-0 w-full py-4 z-30"
         }`}
       >
@@ -81,7 +80,7 @@ const Header = () => {
                   className="w-14 transition-opacity duration-1000"
                 />
               ) : (
-                <span className="text-secondry text-5xl font-amiri font-normal  transition-opacity duration-300">
+                <span className="text-secondry text-5xl font-amiri font-normal transition-opacity duration-300">
                   Crealogic
                 </span>
               )}
@@ -100,7 +99,7 @@ const Header = () => {
                 <a
                   href="#home"
                   onClick={(e) => handleNavClick(e, "home")}
-                  className="text-secondry hover:text-primaryLight"
+                  className="relative group text-secondry before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100 hover:text-primaryLight"
                 >
                   Home
                 </a>
@@ -109,7 +108,7 @@ const Header = () => {
                 <a
                   href="#about"
                   onClick={(e) => handleNavClick(e, "about")}
-                  className="text-secondry hover:text-primaryLight"
+                  className="relative group text-secondry before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100 hover:text-primaryLight"
                 >
                   About
                 </a>
@@ -118,7 +117,7 @@ const Header = () => {
                 <a
                   href="#services"
                   onClick={(e) => handleNavClick(e, "services")}
-                  className="text-secondry hover:text-primaryLight"
+                  className="relative group text-secondry before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100 hover:text-primaryLight"
                 >
                   Services
                 </a>
@@ -127,7 +126,7 @@ const Header = () => {
                 <a
                   href="#contact"
                   onClick={(e) => handleNavClick(e, "contact")}
-                  className="text-secondry hover:text-primaryLight"
+                  className="relative group text-secondry before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100 hover:text-primaryLight"
                 >
                   Contact Us
                 </a>
@@ -154,7 +153,7 @@ const Header = () => {
               <a
                 href="#home"
                 onClick={(e) => handleNavClick(e, "home")}
-                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
+                className="relative group text-secondry before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100 hover:text-primaryLight text-2xl capitalize font-medium"
               >
                 Home
               </a>
@@ -163,7 +162,7 @@ const Header = () => {
               <a
                 href="#about"
                 onClick={(e) => handleNavClick(e, "about")}
-                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
+                className="relative group text-secondry before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100 hover:text-primaryLight text-2xl capitalize font-medium"
               >
                 About Us
               </a>
@@ -172,7 +171,7 @@ const Header = () => {
               <a
                 href="#services"
                 onClick={(e) => handleNavClick(e, "services")}
-                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
+                className="relative group text-secondry before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100 hover:text-primaryLight text-2xl capitalize font-medium"
               >
                 Services
               </a>
@@ -181,7 +180,7 @@ const Header = () => {
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, "contact")}
-                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
+                className="relative group text-secondry before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100 hover:text-primaryLight text-2xl capitalize font-medium"
               >
                 Contact Us
               </a>
