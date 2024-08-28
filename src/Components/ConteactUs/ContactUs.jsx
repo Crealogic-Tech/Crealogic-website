@@ -11,7 +11,7 @@ const CTASection = ({ ctaText }) => {
     e.preventDefault();
     
     setTimeout(() => {
-      navigate("/contact");
+      navigate("/Contact");
     }, 300);
     // window.scrollTo(0, 0);
   };

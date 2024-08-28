@@ -16,7 +16,7 @@ const HeroSection = () => {
     e.preventDefault();
 
     // Navigate to the contact page
-    navigate("/contact", { replace: true });
+    navigate("/Contact", { replace: true });
 
     setTimeout(() => {
       window.location.reload();
