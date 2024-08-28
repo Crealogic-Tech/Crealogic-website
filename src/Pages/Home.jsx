@@ -18,9 +18,9 @@ const Home = () => {
       <Header /> 
       <HeroSection />
       <AboutSection />
+      <Services />
       <Features />
       <WhyUs />
-      <Services />
       <Methodologies />
       <CTASection
         ctaText="Get started with an intro call"
