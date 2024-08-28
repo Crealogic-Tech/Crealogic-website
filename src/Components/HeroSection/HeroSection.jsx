@@ -15,10 +15,16 @@ const HeroSection = () => {
   const handleButtonClick = (e) => {
     e.preventDefault();
 
+    // Navigate to the contact page and force a reload
+    navigate("/contact", { replace: true });
     
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+
+    // Force a reload of the page to ensure it loads at the top
     setTimeout(() => {
-      navigate("/contact");
-    }, 300);
+      window.location.reload();
+    }, 100); // Adjust the delay if necessary
   };
 
   return (

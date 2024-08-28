@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeroSection from "../Components/HeroSection/HeroSection";
 import { AboutSection } from "../Components/AboutSection/AboutSection";
 import Features from "../Components/Features/Features";
@@ -9,9 +9,13 @@ import CTASection from "../Components/ConteactUs/ContectUs";
 import Header from "../Components/Header/Header";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="relative overflow-hidden">
-       <Header /> 
+      <Header /> 
       <HeroSection />
       <AboutSection />
       <Features />

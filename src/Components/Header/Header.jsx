@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import HeaderLogo from "../../assets/images/HeaderLogo.svg";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -37,7 +36,7 @@ const Header = () => {
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
-      const headerOffset = 80; 
+      const headerOffset = 80;
       const elementPosition = targetElement.getBoundingClientRect().top;
       const offsetPosition =
         elementPosition + window.pageYOffset - headerOffset;
@@ -53,6 +52,15 @@ const Header = () => {
     }
   };
 
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    // Add any logic here if you want to handle the logo click without reloading the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <header
@@ -65,19 +73,19 @@ const Header = () => {
         <div className="absolute hidden md:block -top-[450px] overflow-hidden left-1/4 w-[500px] h-[500px] rounded-full blur-[190px] bg-gradient-45 opacity-[0.5]"></div>
         <div className="container mx-auto px-6 md:px-12 py-3 flex justify-between items-center">
           <div>
-          <Link to="/">
-            {isScrolled ? (
-              <img
-                src={HeaderLogo}
-                alt="Logo"
-                className="w-14 transition-opacity duration-1000"
-              />
-            ) : (
-              <span className="text-secondry text-5xl font-amiri font-normal  transition-opacity duration-300">
-                Crealogic
-              </span>
-            )}
-          </Link>
+            <a href="/" onClick={handleLogoClick}>
+              {isScrolled ? (
+                <img
+                  src={HeaderLogo}
+                  alt="Logo"
+                  className="w-14 transition-opacity duration-1000"
+                />
+              ) : (
+                <span className="text-secondry text-5xl font-amiri font-normal  transition-opacity duration-300">
+                  Crealogic
+                </span>
+              )}
+            </a>
           </div>
           <button className="lg:hidden text-secondry p-2" onClick={toggleMenu}>
             {isMenuOpen ? (
@@ -89,63 +97,47 @@ const Header = () => {
           <div className="hidden lg:flex">
             <ul className="flex space-x-12">
               <li>
-                <div className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
-                  <span className="relative group-hover:text-primaryLight capitalize font-medium transition-colors duration-300   text-secondry">
-                    <a
-                      href="#home"
-                      className="hidden lg:inline"
-                      onClick={(e) => handleNavClick(e, "home")}
-                    >
-                      Home
-                    </a>
-                  </span>
-                </div>
+                <a
+                  href="#home"
+                  onClick={(e) => handleNavClick(e, "home")}
+                  className="text-secondry hover:text-primaryLight"
+                >
+                  Home
+                </a>
               </li>
               <li>
-                <div className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
-                  <span className="relative group-hover:text-primaryLight capitalize font-medium transition-colors duration-300   text-secondry">
-                    <a
-                      href="#about"
-                      className="hidden lg:inline"
-                      onClick={(e) => handleNavClick(e, "about")}
-                    >
-                      about
-                    </a>
-                  </span>
-                </div>
+                <a
+                  href="#about"
+                  onClick={(e) => handleNavClick(e, "about")}
+                  className="text-secondry hover:text-primaryLight"
+                >
+                  About
+                </a>
               </li>
               <li>
-                <div className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
-                  <span className="relative group-hover:text-primaryLight capitalize font-medium transition-colors duration-300   text-secondry">
-                    <a
-                      href="#services"
-                      className="hidden lg:inline"
-                      onClick={(e) => handleNavClick(e, "services")}
-                    >
-                      services
-                    </a>
-                  </span>
-                </div>
+                <a
+                  href="#services"
+                  onClick={(e) => handleNavClick(e, "services")}
+                  className="text-secondry hover:text-primaryLight"
+                >
+                  Services
+                </a>
               </li>
               <li>
-                <div className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
-                  <span className="relative group-hover:text-primaryLight capitalize font-medium transition-colors duration-300   text-secondry">
-                    <a
-                      href="#contact"
-                      className="hidden lg:inline"
-                      onClick={(e) => handleNavClick(e, "contact")}
-                    >
-                      Contact Us
-                    </a>
-                  </span>
-                </div>
+                <a
+                  href="#contact"
+                  onClick={(e) => handleNavClick(e, "contact")}
+                  className="text-secondry hover:text-primaryLight"
+                >
+                  Contact Us
+                </a>
               </li>
-             
             </ul>
           </div>
         </div>
       </header>
 
+      {/* Mobile Menu */}
       <div
         className={`fixed lg:hidden w-full h-full left-0 z-20 bg-gray-800 backdrop-blur-md bg-opacity-80 transition-opacity duration-300 ${
           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -161,8 +153,8 @@ const Header = () => {
             <li>
               <a
                 href="#home"
-                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
                 onClick={(e) => handleNavClick(e, "home")}
+                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
               >
                 Home
               </a>
@@ -170,8 +162,8 @@ const Header = () => {
             <li>
               <a
                 href="#about"
-                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
                 onClick={(e) => handleNavClick(e, "about")}
+                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
               >
                 About Us
               </a>
@@ -179,8 +171,8 @@ const Header = () => {
             <li>
               <a
                 href="#services"
-                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
                 onClick={(e) => handleNavClick(e, "services")}
+                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
               >
                 Services
               </a>
@@ -188,8 +180,8 @@ const Header = () => {
             <li>
               <a
                 href="#contact"
-                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
                 onClick={(e) => handleNavClick(e, "contact")}
+                className="text-secondry text-2xl capitalize font-medium hover:text-primaryLight"
               >
                 Contact Us
               </a>

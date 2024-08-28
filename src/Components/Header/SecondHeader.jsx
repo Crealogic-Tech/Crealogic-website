@@ -10,11 +10,7 @@ const SecondHeader = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 200);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -22,6 +18,12 @@ const SecondHeader = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (location.pathname === "/" && location.state?.scrollToTop) {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
@@ -42,15 +44,18 @@ const SecondHeader = () => {
         alert(`Section with ID ${targetId} not found on the current page!`);
       }
     } else {
-      navigate("/");
+      navigate("/", { state: { scrollToTop: true } });
     }
   };
 
-  useEffect(() => {
-    if (location.pathname === "/") {
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollToTop: true } });
+    } else {
       window.scrollTo(0, 0);
     }
-  }, [location]);
+  };
 
   return (
     <header
@@ -64,7 +69,7 @@ const SecondHeader = () => {
 
       <div className="container mx-auto px-6 md:px-12 py-3 flex justify-between items-center relative">
         <div className="logo relative group">
-          <Link to="/">
+          <Link to="/" onClick={handleLogoClick}>
             {isScrolled ? (
               <img
                 src={HeaderLogo}
@@ -85,7 +90,7 @@ const SecondHeader = () => {
                 <Link
                   to="/"
                   className="group relative before:absolute before:inset-x-[-10px] before:bottom-[-20px] before:h-0.5 before:origin-right before:scale-x-0 before:bg-primaryLight before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
-                  onClick={(e) => handleNavClick(e, "/")}
+                  onClick={(e) => handleNavClick(e, "home")}
                 >
                   <span
                     className={`relative group-hover:text-primaryLight font-medium transition-colors duration-300 ${
@@ -101,7 +106,6 @@ const SecondHeader = () => {
                   </span>
                 </Link>
               </li>
-
             </ul>
           </div>
         </div>
