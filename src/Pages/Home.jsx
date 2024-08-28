@@ -5,7 +5,7 @@ import Features from "../Components/Features/Features";
 import Services from "../Components/Services/Services";
 import WhyUs from "../Components/WhyUs/WhyUs";
 import Methodologies from "../Components/Mathodology/Mathodology";
-import CTASection from "../Components/ConteactUs/ContectUs";
+import CTASection from "../Components/ConteactUs/ContactUs";
 import Header from "../Components/Header/Header";
 
 const Home = () => {

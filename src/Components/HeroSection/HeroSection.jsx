@@ -65,10 +65,7 @@ const HeroSection = () => {
               </p>
             </div>
             <div className="flex justify-center items-center mt-10 pt-2">
-              
-              <Button onClick={handleButtonClick}>
-                Let's Get Started!
-                </Button>
+              <Button onClick={handleButtonClick}>Let's Get Started!</Button>
             </div>
           </div>
         </div>
