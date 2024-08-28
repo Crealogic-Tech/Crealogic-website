@@ -18,7 +18,6 @@ const HeroSection = () => {
     // Navigate to the contact page
     navigate("/contact", { replace: true });
 
-    // Force a reload of the page to ensure it loads at the top
     setTimeout(() => {
       window.location.reload();
     }, 100); // Adjust the delay if necessary
