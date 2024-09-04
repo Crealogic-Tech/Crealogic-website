@@ -16,7 +16,7 @@ export const AboutSection = () => {
       <div className="container">
         <Divider title="About" />
         
-        <div className="mt-20">
+        <div className="my-20">
           <ProfitSection
             title="Crafting Future-Ready Digital Experiences for Your Business"
             description="At Crealogic, we are committed to driving innovation and creating digital solutions tailored to your business needs. With a passion for creativity and a focus on technology, we deliver exceptional experiences that help you stand out in a crowded marketplace."

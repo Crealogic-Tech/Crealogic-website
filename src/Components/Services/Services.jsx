@@ -10,6 +10,7 @@ import MarketingIcon1 from "../../assets/images/marketing.svg";
 import ApplicationIcon1 from "../../assets/images/application.svg";
 import WebIcon1 from "../../assets/images/web.svg";
 import Divider from "../Divider";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Services = () => {
   const cardsData = [
@@ -57,51 +58,61 @@ const Services = () => {
     },
   ];
 
+  const CustomPrevArrow = ({ onClick }) => (
+    <button
+      className="absolute left-[calc(50%-50px)] bottom-[-60px] flex justify-center items-center bg-gray-300 hover:bg-gray-400 text-gray-700 p-2 rounded-full shadow"
+      onClick={onClick}
+    >
+      <FaChevronLeft className="text-xl" />
+    </button>
+  );
+
+  const CustomNextArrow = ({ onClick }) => (
+    <button
+      className="absolute right-[calc(50%-50px)] bottom-[-60px] flex justify-center items-center bg-gray-300 hover:bg-gray-400 text-gray-700 p-2 rounded-full shadow"
+      onClick={onClick}
+    >
+      <FaChevronRight className="text-xl" />
+    </button>
+  );
+
   const settings = {
     dots: false,
     infinite: true,
-    speed: 3000,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: "linear",
-    pauseOnHover: true,
+    autoplay: false,
+    pauseOnHover: false,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 992,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 576,
+        breakpoint: 512,
         settings: {
           slidesToShow: 1,
         },
       },
     ],
-    arrows: false,
+    arrows: true,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
   };
 
   return (
     <section id="services" className="pb-20 relative">
-      <div className=" ">
-        <div className="absolute block sm:hidden -top-36 sm:-top-20 -right-36 ght sm:-right-20 w-[300px] h-[300px] -z-10 rounded-full blur-[100px] bg-gradient-45 opacity-[0.3]"></div>
-      </div>
+      <div className="absolute block sm:hidden -top-36 sm:-top-20 -right-36 ght sm:-right-20 w-[300px] h-[300px] -z-10 rounded-full blur-[100px] bg-gradient-45 opacity-[0.3]"></div>
       <div className="container">
         <Divider title="Services" />
 
-        <div className="mt-20 px-3">
+        <div className="mt-20 md:px-3 relative">
           <Slider {...settings}>
             {cardsData.map((card) => (
-              <div key={card.id} className="px-3 slick-slide">
+              <div key={card.id} className="md:px-3 slick-slide">
                 <SecurityCard
                   title={card.title}
                   description={card.description}

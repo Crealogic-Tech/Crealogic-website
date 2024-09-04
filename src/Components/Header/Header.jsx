@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import HeaderLogo from "../../assets/images/HeaderLogo.svg";
+import HeaderLogo from "../../assets/images/logo.gif";
+import HeaderTextLogo from "../../assets/images/3.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = () => {
@@ -80,9 +81,10 @@ const Header = () => {
                   className="w-14 transition-opacity duration-1000"
                 />
               ) : (
-                <span className="text-secondry text-5xl font-amiri font-normal transition-opacity duration-300">
-                  Crealogic
-                </span>
+                <img src={HeaderTextLogo} alt="" className="h-10  -translate-x-20" />
+                // <span className="text-secondry text-5xl font-amiri font-normal transition-opacity duration-300">
+                //   Crealogic
+                // </span>
               )}
             </a>
           </div>

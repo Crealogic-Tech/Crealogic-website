@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import HeaderLogo from "../../assets/images/HeaderLogo.svg";
+import HeaderLogo from "../../assets/images/logo.gif";
+import HeaderTextLogo from "../../assets/images/3.png";
 import { IoHome } from "react-icons/io5"; 
 
 const SecondHeader = () => {
@@ -74,12 +75,13 @@ const SecondHeader = () => {
               <img
                 src={HeaderLogo}
                 alt="Logo"
-                className="w-14 transition-opacity duration-1000 headerLogo"
+                className="w-14 transition-opacity duration-1000 "
               />
             ) : (
-              <span className="text-secondry text-5xl font-amiri font-normal transition-opacity duration-300">
-                Crealogic
-              </span>
+              <img src={HeaderTextLogo} alt="" className="h-10  -translate-x-20" />
+                // <span className="text-secondry text-5xl font-amiri font-normal transition-opacity duration-300">
+                //   Crealogic
+                // </span>
             )}
           </Link>
         </div>
@@ -94,7 +96,7 @@ const SecondHeader = () => {
                 >
                   <span
                     className={`relative group-hover:text-primaryLight font-medium transition-colors duration-300 ${
-                      isScrolled ? "text-primaryDark" : "text-secondry"
+                      isScrolled ? "text-primaryMedium" : "text-secondry"
                     }`}
                   >
                     <span className="hidden capitalize lg:inline">Home</span>

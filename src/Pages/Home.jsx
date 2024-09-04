@@ -7,6 +7,8 @@ import WhyUs from "../Components/WhyUs/WhyUs";
 import Methodologies from "../Components/Mathodology/Mathodology";
 import CTASection from "../Components/ConteactUs/ContactUs";
 import Header from "../Components/Header/Header";
+import Blog from "../Components/Blog/Blog";
+import BlogDetails from "../Components/BlogDetails/BlogDetails";
 
 const Home = () => {
   useEffect(() => {
@@ -21,6 +23,8 @@ const Home = () => {
       <Services />
       <Features />
       <WhyUs />
+      {/* <Blog /> 
+      <BlogDetails /> */}
       <Methodologies />
       <CTASection
         ctaText="Get started with an intro call"
